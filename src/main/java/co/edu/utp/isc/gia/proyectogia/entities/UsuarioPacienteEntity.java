@@ -16,6 +16,7 @@ public class UsuarioPacienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPaciente;
+
     private String nombre;
     private String apellido;
     private String email;
@@ -24,6 +25,8 @@ public class UsuarioPacienteEntity {
     private String direccion;
     private String estadoCivil;
     private String numeroDocumento;
-    private String descripcion;
+
+    @OneToOne(mappedBy = "usuarioPaciente", cascade = CascadeType.REMOVE,fetch = FetchType.LAZY)
+    private HistoriaClinicaEntity historiaClinicaEntity;
 
 }

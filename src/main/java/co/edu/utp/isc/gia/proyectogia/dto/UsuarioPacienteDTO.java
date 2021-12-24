@@ -22,5 +22,4 @@ public class UsuarioPacienteDTO implements Serializable {
     private String direccion;
     private String estadoCivil;
     private String numeroDocumento;
-    private String descripcion;
 }
