@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -25,4 +26,7 @@ public class UsuarioMedicoEntity {
     private String telefono;
     private String ips;
     private Date fechaNacimiento;
+
+    @OneToMany(mappedBy = "usuarioMedico", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<ProcedimientosEntity> procedimientosEntities;
 }

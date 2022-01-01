@@ -23,6 +23,7 @@ public class HistoriaClinicaServiceImpl implements HistoriaClinicaService {
         HistoriaClinicaEntity historiaClinicaEntityPer = historiaClinicaRepository.save(historiaClinicaEntity);
         HistoriaClinicaDTO historiaClinicaDTO1 = modelMapper.map(historiaClinicaEntityPer, HistoriaClinicaDTO.class);
 
+        System.out.println(historiaClinicaDTO1);
         return historiaClinicaDTO1;
     }
 
