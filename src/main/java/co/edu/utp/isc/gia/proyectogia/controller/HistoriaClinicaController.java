@@ -25,7 +25,7 @@ public class HistoriaClinicaController {
         return historiaClinica.crearHistoria(historiaClinicaDTO);
     }
 
-    @GetMapping
+    @GetMapping()
     public HistoriaClinicaDTO buscarPorId(@RequestParam("id") Long id){
         return historiaClinica.buscarPorId(id);
     }
