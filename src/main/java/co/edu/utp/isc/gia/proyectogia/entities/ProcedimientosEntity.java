@@ -20,10 +20,10 @@ public class ProcedimientosEntity {
     private String tipoProcedimiento;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_historia_clinica")
+    @JoinColumn(name = "id_historia_clinica",referencedColumnName = "idHistoriaClinica")
     private HistoriaClinicaEntity historiaClinica;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_medico")
+    @JoinColumn(name = "id_medico",referencedColumnName = "idMedico")
     private UsuarioMedicoEntity usuarioMedico;
 }

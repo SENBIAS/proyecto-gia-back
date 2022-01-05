@@ -10,4 +10,6 @@ public interface EnfermedadesHereditariasService {
     boolean actualizarEnfermedadHereditaria(EnfermedadesHereditariasDTO enfermedadesHereditariasDTO);
 
     List<EnfermedadesHereditariasDTO> buscarPorIdHistoria(Long id);
+
+    boolean eliminarEnfermedadHereditaria(Long id);
 }

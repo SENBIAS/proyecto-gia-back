@@ -23,4 +23,8 @@ public class EnfermedadesHereditariasController {
         return enfermedadesHereditariasService.actualizarEnfermedadHereditaria(enfermedadesHereditariasDTO);
     }
 
+    @DeleteMapping()
+    public boolean eliminarEnfermedadHereditaria(@RequestParam("id") Long id){
+        return enfermedadesHereditariasService.eliminarEnfermedadHereditaria(id);
+    }
 }

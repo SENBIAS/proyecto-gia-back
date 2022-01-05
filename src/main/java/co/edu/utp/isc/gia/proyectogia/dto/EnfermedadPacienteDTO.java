@@ -14,5 +14,4 @@ public class EnfermedadPacienteDTO {
     private String enfermedad;
     private Long idEnfermedadPaciente;
     private HistoriaClinicaDTO historiaClinica;
-    private Long idEnfermedad;
 }

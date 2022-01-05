@@ -56,5 +56,14 @@ public class EnfermedadesHereditariasServiceImpl implements EnfermedadesHeredita
             throw new UserNotFoundException("No se encontro ninguna enfermedad hereditaria relacionada a la historia clinica");
         }
     }
+    @Override
+    public boolean eliminarEnfermedadHereditaria(Long id) {
+        if(enfermedadesHereditariasRepository.existsById(id)){
+            enfermedadesHereditariasRepository.deleteById(id);
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }
