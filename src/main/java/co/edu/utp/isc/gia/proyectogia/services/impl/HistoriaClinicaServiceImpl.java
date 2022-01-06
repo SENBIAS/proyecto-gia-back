@@ -29,7 +29,11 @@ public class HistoriaClinicaServiceImpl implements HistoriaClinicaService {
 
     @Override
     public HistoriaClinicaDTO buscarPorId(Long id) {
-        HistoriaClinicaEntity historiaClinicaEntity = historiaClinicaRepository.findByUsuarioPaciente_IdPaciente(id);
-        return modelMapper.map(historiaClinicaEntity,HistoriaClinicaDTO.class);
+        if(historiaClinicaRepository.existsByUsuarioPaciente_IdPaciente(id)) {
+            HistoriaClinicaEntity historiaClinicaEntity = historiaClinicaRepository.findByUsuarioPaciente_IdPaciente(id);
+            return modelMapper.map(historiaClinicaEntity, HistoriaClinicaDTO.class);
+        }else{
+            throw new UserNotFoundException("No existe historia clinica para ese paciente");
+        }
     }
 }
